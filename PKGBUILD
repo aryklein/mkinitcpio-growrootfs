@@ -3,8 +3,8 @@
 
 pkgname=mkinitcpio-growrootfs
 pkgver=0.1
-pkgrel=4
-pkgdesc="mkinitcpio hook to autoscale the rootfs to the size of the partition"
+pkgrel=5
+pkgdesc="mkinitcpio hook to resize the partition and autoscale the rootfs"
 url="https://github.com/aryklein/mkinitcpio-growrootfs"
 arch=('any')
 license=('GPL3')
