@@ -2,6 +2,7 @@
 
 build() {
     add_binary date
+    add_binary findfs
     add_binary growpart
     add_binary resize2fs
     add_binary sfdisk

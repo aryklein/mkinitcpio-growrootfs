@@ -14,8 +14,8 @@ source=('growpart'
         'growfs-hook'
         'growfs-install')
 sha256sums=('13428ca6e335176d5ebfd30027f3a4dbc9b8054e6d49f631f87aae55d9ffcb8c'
-            '69dcb1143dd84d1f7a834bac58e7fb03c28f63cf588a25bb1c444fb1ebef828e'
-            '656083022534ea34e10926bd63a7efad5a56dbaa5fcb569c2df0201b57a4cd39')
+            '6dd272462b036a39eb3175e5a34624e91e42a23b29f0671cb84639f6fee6ede4'
+            'b8820708d36e4e30a0493474f3b64d3eef5b42ceec4b1781832246c2ff07c462')
 package() {
     install -m755 -d "${pkgdir}/usr/bin"
     install -m755 "${srcdir}/growpart" "${pkgdir}/usr/bin/growpart"
