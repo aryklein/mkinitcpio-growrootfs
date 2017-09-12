@@ -9,8 +9,21 @@ run_hook() {
     [ -f "${rootmnt}$f" ] && echo "GrowRootFS: disabled by file" && return 0
   done
 
+  # Resolve UUID= / LABEL=
+  case ${root} in
+    UUID=*)
+      rootpath=$(findfs ${root})
+      ;;
+    LABEL=*)
+      rootpath=$(findfs ${root})
+      ;;
+    *)
+      rootpath=${root}
+      ;;
+  esac
+
   # figure out what disk '$root' is on
-  { [ ! -L "${root}" ] && rootdev=${root} || rootdev=$(readlink -f "${root}") ; } || { echo "failed to get target of link for ${root}" && 
+  { [ ! -L "${rootpath}" ] && rootdev=${rootpath} || rootdev=$(readlink -f "${rootpath}") ; } || { echo "failed to get target of link for ${rootpath}" && 
 return 0 ; }
 
   case "${rootdev}" in
